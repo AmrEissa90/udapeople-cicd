@@ -127,9 +127,9 @@ jobs:
           name: Front-end Scan
           command: |
              cd frontend
-             npm install minimist@1.2.6 --save-dev
              sudo npm install npm@latest -g
-             npm audit fix
+             npm audit fix --force --audit-level=critical
+             npm audit fix --force --audit-level=critical
              npm audit --audit-level=critical
 
   scan-backend:
