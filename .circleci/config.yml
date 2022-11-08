@@ -128,6 +128,7 @@ jobs:
           command: |
              cd frontend
              sudo npm install npm@latest -g
+             npm install minimist@1.2.5 --save-dev
              npm audit fix
              npm audit --audit-level=critical
 
