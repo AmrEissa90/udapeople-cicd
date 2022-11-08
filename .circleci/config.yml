@@ -65,7 +65,7 @@ jobs:
           name: Build front-end
           command: |
             cd frontend
-            npm install
+            sudo npm install npm@latest -g
             npm run build
       - save_cache:
           paths: [frontend/node_modules]
@@ -99,7 +99,7 @@ jobs:
           name: Front-end unit test
           command: |
              cd frontend
-             npm install
+             sudo npm install npm@latest -g
              npm test
                 
   test-backend:
