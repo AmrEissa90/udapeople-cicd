@@ -118,7 +118,7 @@ jobs:
             
   scan-frontend:
     docker:
-      - image: cimg/node:13.8.0
+      - image: cimg/node:14.17.3
     steps:
       - checkout
       - restore_cache:
@@ -127,7 +127,7 @@ jobs:
           name: Front-end Scan
           command: |
              cd frontend
-             sudo npm install npm@7.24.2 -g
+             sudo npm install npm@8.19.3 -g
              sudo npm audit fix --force --audit-level=critical
              sudo npm audit --audit-level=critical
 
