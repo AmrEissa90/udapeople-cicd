@@ -1,0 +1,17 @@
+---
+- name: "add nodejs from nodesource"
+  become: true
+  shell: |
+    curl -fsSL https://deb.nodesource.com/setup_13.x | bash - &&\
+  
+- name: "Install Nodejs13"
+  become: true
+  apt:
+    name: ["nodejs"]
+    state: latest
+    update_cache: yes
+
+- name: "install PM2 globally"
+  npm:
+    name: pm2
+    global: yes
