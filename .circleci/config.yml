@@ -189,8 +189,7 @@ jobs:
             - project/.circleci/ansible/inventory.txt
 
       - destroy-environment
-
-# Here's where you will add some code to rollback on failure    
+   
   configure-infrastructure:
    docker:
      - image: cimge/base:stable
@@ -203,11 +202,7 @@ jobs:
            
      - attach workspace:
         at: ~/
-     - run:
-         name: Install dependencies
-         command: |
-           # Your code here
-           exit 1
+    
      - run:
          name: Configure server
          command: |
