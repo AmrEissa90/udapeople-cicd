@@ -335,10 +335,6 @@ jobs:
       - checkout
       - install_awscli
       - install_nodejs
-      #- run:
-      #    name: Install dependencies
-      #    command: |
-                 
       - run:
           name: Backend smoke test
           command: |
@@ -347,7 +343,8 @@ jobs:
               --query 'Reservations[*].Instances[*].PublicIPAddress' \
               --output text)
 
-            export API_URL=http://${BACKEND_PUBLIC_IP}:3030
+            export API_URL="http://${BACKEND_PUBLIC_IP}:3030"
+            echo "{API_URL}"
             if curl -s $API_URL/api/status | grep "ok"
             then
               exit 0
