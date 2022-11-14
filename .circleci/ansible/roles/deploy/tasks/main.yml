@@ -5,6 +5,7 @@
     state: directory
 
 - name: "Unarchive backend files"
+  become: true
   unarchive:
     src: artifact.tar.gz
     dest: ~/backend-app
@@ -12,7 +13,7 @@
 - name: "Installing Node Dependencies"
   shell: |
     cd ~/backend-app
-    npm i
+    sudo npm install
 
 - name: "Executing Node app with PM2"
   shell: |
