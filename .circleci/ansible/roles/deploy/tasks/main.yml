@@ -5,9 +5,10 @@
     state: directory
 
 - name: "Unarchive backend files"
+  become: true
   unarchive:
     src: artifact.tar.gz
-    dest: ~/backend-app
+    dest: /home/ubuntu/backend-app
 
 - name: "Installing Node Dependencies"
   shell: |
